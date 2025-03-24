@@ -50,9 +50,10 @@ def main():
 
     # Campactação de arquivos pdf
 
-    dir_download_path = file_manager.get_folder_download() # pega o caminho do diretório download
-    list_pdf_str= file_manager.List_dir(dir_download_path) # lista dos arquivos pdf
-
+    dir_download_path = (
+        file_manager.get_folder_download()
+    )  # pega o caminho do diretório download
+    list_pdf_str = file_manager.List_dir(dir_download_path)  # lista dos arquivos pdf
 
     file_manager.make_zip(dir_download_path, list_pdf_str)
 

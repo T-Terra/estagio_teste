@@ -1,5 +1,6 @@
 from selenium.webdriver.chrome.options import Options
 
+
 class ConfigOptions:
     def __init__(self, path_download_folder):
         self.path_download_folder = path_download_folder

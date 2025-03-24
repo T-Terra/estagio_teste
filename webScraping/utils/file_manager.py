@@ -1,10 +1,13 @@
 from os import getcwd, path, makedirs, listdir, remove
 from zipfile import ZipFile
 
+
 class FileManager:
     def make_zip(self, path_download, list_pdf):
         try:
-            zip_path = f"{path_download}\\files.zip"  # Caminho para salvar o arquivo zip
+            zip_path = (
+                f"{path_download}\\files.zip"  # Caminho para salvar o arquivo zip
+            )
 
             with ZipFile(zip_path, "w") as zip_file:
                 for file_name in list_pdf:
@@ -25,13 +28,14 @@ class FileManager:
             print("Error: Arquivos não foram apagados")
 
     """Funções auxiliares"""
+
     def make_folder(self, folder_path):
         try:
             if not path.isdir(folder_path):
                 makedirs(folder_path, exist_ok=True)
         except:
             print("Error: Caminho da pasta Download não existe")
-    
+
     def List_dir(self, path_download) -> list[str]:
         try:
             files_pdf_path = listdir(path_download)  # Listagem do diretório downloads
