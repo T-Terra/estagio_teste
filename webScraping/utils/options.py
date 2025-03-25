@@ -1,4 +1,9 @@
 from selenium.webdriver.chrome.options import Options
+from dotenv import load_dotenv
+from os import getenv
+
+
+load_dotenv(override=True)
 
 
 class ConfigOptions:
@@ -7,8 +12,10 @@ class ConfigOptions:
 
     def make_options(self) -> Options:
         try:
-
             chrome_options = Options()
+
+            if getenv("HEADLESS", "True").lower() == "true":
+                chrome_options.add_argument("--headless=new")
 
             chrome_options.add_experimental_option(
                 "prefs",

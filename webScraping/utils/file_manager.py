@@ -1,9 +1,10 @@
 from os import getcwd, path, makedirs, listdir, remove
 from zipfile import ZipFile
+from time import sleep
 
 
 class FileManager:
-    def make_zip(self, path_download, list_pdf):
+    def make_zip(self, path_download, list_pdf, wait: int = 1):
         try:
             zip_path = (
                 f"{path_download}\\files.zip"  # Caminho para salvar o arquivo zip
@@ -14,6 +15,8 @@ class FileManager:
                     if file_name.endswith(".pdf"):
                         file_path = path.join(path_download, file_name)
                         zip_file.write(file_path, path.basename(file_path))
+            
+            sleep(wait)
         except AttributeError as error:
             print(f"Error: {error}")
         except Exception as error:
@@ -54,7 +57,7 @@ class FileManager:
     def get_folder_download(self):
         try:
             download_folder = f"{getcwd()}\\downloads\\"
-            self.make_folder(download_folder)
+            makedirs(download_folder, exist_ok=True)
             return download_folder
         except AttributeError as error:
             print(f"Error: {error}")

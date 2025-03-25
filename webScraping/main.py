@@ -1,52 +1,27 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from time import sleep
-
-
-from utils.options import ConfigOptions
 from utils.file_manager import FileManager
+from utils.abstract_driver import ChromeDriver
 
 
 def main():
     # Configurações
     file_manager = FileManager()
-
-    chrome_options = ConfigOptions(file_manager.get_folder_download()).make_options()
+    chrome = ChromeDriver()
 
     # acessa o site
-    service = Service(ChromeDriverManager().install())
 
-    driver = webdriver.Chrome(service=service, options=chrome_options)
+    chrome.start_browser()
 
-    sleep(2)
+    chrome.browsing_to(2)
 
-    driver.get(
-        "https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos"
-    )
+    chrome.click_element("//body", 2)
 
-    sleep(2)
-    # faz o download dos arquivos
+    # """Baixa o arquivo Anexo I"""
 
-    driver.find_element(By.XPATH, "//body").click()
+    chrome.click_element('//a[contains(@href, ".pdf") and contains(text(), "Anexo I.")]', 10)
 
-    sleep(1)
+    chrome.click_element('//a[contains(@href, ".pdf") and contains(text(), "Anexo II.")]', 10)
 
-    """Baixa o arquivo Anexo I"""
-    driver.find_element(
-        By.XPATH, '//a[contains(@href, ".pdf") and contains(text(), "Anexo I.")]'
-    ).click()
-
-    sleep(10)
-
-    driver.find_element(
-        By.XPATH, '//a[contains(@href, ".pdf") and contains(text(), "Anexo II.")]'
-    ).click()
-
-    sleep(5)
-
-    driver.quit()
+    chrome.close_browser()
 
     # Campactação de arquivos pdf
 
@@ -55,7 +30,7 @@ def main():
     )  # pega o caminho do diretório download
     list_pdf_str = file_manager.List_dir(dir_download_path)  # lista dos arquivos pdf
 
-    file_manager.make_zip(dir_download_path, list_pdf_str)
+    file_manager.make_zip(dir_download_path, list_pdf_str, 2)
 
     file_manager.remove_files(dir_download_path, list_pdf_str)
 
