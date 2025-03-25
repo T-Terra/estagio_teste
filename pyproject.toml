@@ -16,7 +16,9 @@ dependencies = [
     "django-cors-headers (>=4.7.0,<5.0.0)",
     "dj-database-url (>=2.3.0,<3.0.0)",
     "webdriver-manager (>=4.0.2,<5.0.0)",
-    "pymupdf (>=1.25.4,<2.0.0)"
+    "tabula-py (>=2.10.0,<3.0.0)",
+    "jpype1 (>=1.5.2,<2.0.0)",
+    "pypdf2 (>=3.0.1,<4.0.0)",
 ]
 
 [tool.poetry]
