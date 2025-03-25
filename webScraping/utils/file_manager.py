@@ -14,8 +14,10 @@ class FileManager:
                     if file_name.endswith(".pdf"):
                         file_path = path.join(path_download, file_name)
                         zip_file.write(file_path, path.basename(file_path))
-        except Exception:
-            print("Error: Arquivo zip não foi criado.")
+        except AttributeError as error:
+            print(f"Error: {error}")
+        except Exception as error:
+            print(f"Error: {error}")
 
     def remove_files(self, path_download, list_pdf):
         try:
@@ -24,8 +26,10 @@ class FileManager:
                     file_path = path.join(path_download, file)
 
                     remove(file_path)
-        except Exception:
-            print("Error: Arquivos não foram apagados")
+        except AttributeError as error:
+            print(f"Error: {error}")
+        except Exception as error:
+            print(f"Error: {error}")
 
     """Funções auxiliares"""
 
@@ -33,20 +37,26 @@ class FileManager:
         try:
             if not path.isdir(folder_path):
                 makedirs(folder_path, exist_ok=True)
-        except:
-            print("Error: Caminho da pasta Download não existe")
+        except AttributeError as error:
+            print(f"Error: {error}")
+        except Exception as error:
+            print(f"Error: {error}")
 
     def List_dir(self, path_download) -> list[str]:
         try:
             files_pdf_path = listdir(path_download)  # Listagem do diretório downloads
             return files_pdf_path
-        except Exception:
-            print("Error: Diretorio não existe")
+        except AttributeError as error:
+            print(f"Error: {error}")
+        except Exception as error:
+            print(f"Error: {error}")
 
     def get_folder_download(self):
         try:
             download_folder = f"{getcwd()}\\downloads\\"
             self.make_folder(download_folder)
             return download_folder
-        except Exception:
-            print("Error: Caminho não existe.")
+        except AttributeError as error:
+            print(f"Error: {error}")
+        except Exception as error:
+            print(f"Error: {error}")

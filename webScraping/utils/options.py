@@ -21,5 +21,7 @@ class ConfigOptions:
             )
 
             return chrome_options
-        except Exception:
-            print("Error: Options não foram adicionadas")
+        except AttributeError as error:
+            print(f"Error: {error}")
+        except Exception as error:
+            print(f"Error: {error}")
