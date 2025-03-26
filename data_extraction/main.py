@@ -3,7 +3,7 @@ import PyPDF2
 from os import getcwd, path, listdir
 from zipfile import ZipFile
 
-def main(pdf_path, output_csv_path, path_dir_download, files_list):
+def main(pdf_path, output_csv_path):
     with open(pdf_path, "rb") as file:
         reader = PyPDF2.PdfReader(file)
         total_pages = len(reader.pages)
