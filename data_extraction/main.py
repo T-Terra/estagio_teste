@@ -1,11 +1,9 @@
 import tabula
 import PyPDF2
-from os import getcwd
+from os import getcwd, path, listdir
+from zipfile import ZipFile
 
-# Função para extrair texto do PDF e salvar em CSV
-def main(pdf_path, output_csv_path):
-    # Abrir o documento PDF
-
+def main(pdf_path, output_csv_path, path_dir_download, files_list):
     with open(pdf_path, "rb") as file:
         reader = PyPDF2.PdfReader(file)
         total_pages = len(reader.pages)
@@ -30,16 +28,26 @@ def main(pdf_path, output_csv_path):
                 pages += 1
         elif len(doc) > 1:
             print(len(doc), f"page: {pages}")
-            table = doc[0]
-            table.to_csv("maior.csv", mode="a", index=False)
-            pages += 1
         else:
             break
+    
 
+def make_zip(path_download, list_files):
+    zip_path = (
+        f"{path_download}\\Teste_gabriel_terra.zip" 
+    )
+
+    with ZipFile(zip_path, "w") as zip_file:
+        for file_name in list_files:
+            if file_name.endswith(".csv"):
+                file_path = path.join(path_download, file_name)
+                zip_file.write(file_path, path.basename(file_path))
 
 pdf_path = f"{getcwd()}\\downloads\\files\\Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf"
-csv_output_path = "output_table.csv"
+csv_output_path = f"{getcwd()}\\downloads\\data_table.csv"
+path_download = f"{getcwd()}\\downloads\\"
+files_list = listdir(path_download)
 
 if __name__ == '__main__':
-    # Chamar a função para extrair a tabela e salvar em CSV
-    main(pdf_path, csv_output_path)
+    main(pdf_path, csv_output_path, path_download, files_list)
+    make_zip(path_download, files_list)
