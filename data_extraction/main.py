@@ -17,12 +17,10 @@ def main(pdf_path, output_csv_path, path_dir_download, files_list):
         doc = tabula.read_pdf(pdf_path, pages=pages, lattice=True)
         if len(doc) == 1:
             if pages == 3:
-                print(pages)
                 table = doc[0]
                 table.to_csv(output_csv_path, mode="a", index=False)
                 pages += 1
             else:
-                print(pages)
                 table = doc[0]
                 table.to_csv(output_csv_path, mode="a", index=False, header=False)
                 pages += 1
