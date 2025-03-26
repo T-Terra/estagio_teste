@@ -8,26 +8,16 @@ def main(pdf_path, output_csv_path):
         reader = PyPDF2.PdfReader(file)
         total_pages = len(reader.pages)
         
-    pages = 3
-
-    while True:
-        if pages > total_pages:
-            break
-
-        doc = tabula.read_pdf(pdf_path, pages=pages, lattice=True)
-        if len(doc) == 1:
-            if pages == 3:
-                table = doc[0]
+    for index in range(3, total_pages + 1):
+        df = tabula.read_pdf(pdf_path, pages=index, lattice=True)
+        if len(df) == 1:
+            if index == 3:
+                table = df[0].rename(columns={"OD": "Seg. Odontológica", "AMB": "Seg. Ambulatorial"})
                 table.to_csv(output_csv_path, mode="a", index=False)
-                pages += 1
             else:
-                table = doc[0]
-                table.to_csv(output_csv_path, mode="a", index=False, header=False)
-                pages += 1
-        elif len(doc) > 1:
-            print(len(doc), f"page: {pages}")
+                df[0].to_csv(output_csv_path, mode="a", index=False, header=False)
         else:
-            break
+            print(len(df), f"page: {index}")
     
 
 def make_zip(path_download, list_files):
@@ -47,5 +37,5 @@ path_download = f"{getcwd()}\\downloads\\"
 files_list = listdir(path_download)
 
 if __name__ == '__main__':
-    main(pdf_path, csv_output_path, path_download, files_list)
+    main(pdf_path, csv_output_path)
     make_zip(path_download, files_list)
