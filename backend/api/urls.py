@@ -3,6 +3,6 @@ from .views import ApiViewset
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register(r"api/list", ApiViewset, basename="home")
+router.register(r"api/list", ApiViewset, basename="list")
 
 urlpatterns = router.urls

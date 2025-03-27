@@ -9,5 +9,5 @@ class ApiViewset(ViewSet):
     def list(self, request):
         queryset = Enterprise.objects.all()
         query_filter = EnterpriseFilters(request.GET, queryset)
-        serializer = EnterpriseSerializer(query_filter.qs, many=True)
+        serializer = EnterpriseSerializer(query_filter.qs[:10], many=True)
         return Response(serializer.data)

@@ -4,7 +4,7 @@ import Search from './components/Search.vue';
 
 <template>
   <div>
-    <h1>Pesquisa de Empresas</h1>
+    <h1>Pesquisa de Operadoras</h1>
     <Search/>
   </div>
 </template>

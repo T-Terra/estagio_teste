@@ -1,3 +1,34 @@
+<script setup>
+import List from "./List.vue";
+import { ref, watch } from "vue"
+import axios from "axios";
+    
+const searchQuery = ref("")
+const operadoras = ref([])
+
+const apiUrl = import.meta.env.VITE_URL_API
+
+const fetchOperadoras = async () => {
+    if (searchQuery.value.length < 2) {
+      operadoras.value = []
+      return
+    }
+
+    try {
+      const response = await axios.get(
+        `${apiUrl}?razao_social__icontains=${searchQuery.value}`
+      )
+      operadoras.value = response.data
+    } catch (error) {
+      console.error("Erro ao buscar operadoras:", error)
+    }
+}
+
+watch(searchQuery, () => {
+  fetchOperadoras()
+})
+</script>
+
 <template>
     <div>
       <input
@@ -6,46 +37,14 @@
         @input="fetchOperadoras"
         placeholder="Digite para buscar..."
       />
-      
-      <ul v-if="operadoras.length">
-        <li v-for="operadora in operadoras" :key="operadora.id">
-          {{ operadora.nome_fantasia }} ({{ operadora.razao_social }})
-        </li>
-      </ul>
-      
-      <p v-else-if="searchQuery">Nenhuma operadora encontrada.</p>
+      <List :operadoras="operadoras" :searchQuery="searchQuery"/>
     </div>
 </template>
-  
-<script setup>
-import { ref, watch } from "vue"
-import axios from "axios";
-    
-const searchQuery = ref("")
-const operadoras = ref([])
-
-const fetchOperadoras = async () => {
-    if (searchQuery.value.length < 2) {
-        operadoras.value = []
-        return
-    }
-
-    try {
-        const response = await axios.get(`http://localhost:8000/api/list/?razao_social__icontains=${searchQuery.value}`)
-        operadoras.value = response.data
-    } catch (error) {
-        console.error("Erro ao buscar operadoras:", error)
-    }
-}
-
-watch(searchQuery, () => {
-    fetchOperadoras()
-})
-</script>
 
 <style scoped>
 .input {
-    padding: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
 }
 </style>
   
