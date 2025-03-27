@@ -33,7 +33,7 @@ else
     exit 0
 fi
 
-NEW_TAG="$MAJOR.$MINOR.$PATCH"
+NEW_TAG="v$MAJOR.$MINOR.$PATCH"
 echo "Nova tag: $NEW_TAG"
 
 
