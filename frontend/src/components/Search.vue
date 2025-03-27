@@ -25,13 +25,13 @@ const searchQuery = ref("")
 const operadoras = ref([])
 
 const fetchOperadoras = async () => {
-    if (searchQuery.value.length < 3) {
+    if (searchQuery.value.length < 2) {
         operadoras.value = []
         return
     }
 
     try {
-        const response = await axios.get(`http://localhost:8000/api/search/?q=${searchQuery.value}`)
+        const response = await axios.get(`http://localhost:8000/api/list/?razao_social__icontains=${searchQuery.value}`)
         operadoras.value = response.data
     } catch (error) {
         console.error("Erro ao buscar operadoras:", error)
