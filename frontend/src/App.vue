@@ -1,10 +1,11 @@
 <script setup>
-
+import Search from './components/Search.vue';
 </script>
 
 <template>
   <div>
-    <h1>Estágio Teste</h1>
+    <h1>Pesquisa de Empresas</h1>
+    <Search/>
   </div>
 </template>
 
