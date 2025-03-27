@@ -2,3 +2,5 @@
 - fix: release script (94d22b2)
 - chore: add allowed hosts in config backend (2d99d50)
 - BREAKING CHANGE: Remove comments (c0d2e31)
+## vv1.0.1
+- fix: clear changelog (bceef01)
