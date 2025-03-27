@@ -30,16 +30,18 @@ SECRET_KEY = "django-insecure-_@*ng+h5c^+54$3tv_snizps6y&axj==53*^#x1tt8=q!lj-ap
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "True").lower() == "true"
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["estagio-teste-five.vercel.app", "localhost:5173"]
 
 APPEND_SLASH = False
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173"
+    "http://localhost:5173",
+    "https://estagio-teste-five.vercel.app"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
+    "https://estagio-teste-five.vercel.app"
 ]
 
 
