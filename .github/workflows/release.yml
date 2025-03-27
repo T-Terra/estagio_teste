@@ -1,0 +1,50 @@
+name: Semantic Release
+
+on:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Obtém todas as tags para o versionamento correto
+
+      - name: Configurar usuário do GitHub
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions@github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.TOKEN_REPO }}@github.com/T-Terra/estagio_teste.git
+
+      - name: Instalar Poetry
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install poetry
+
+      - name: Tornar o script executável
+        run: chmod +x ./scripts/release.sh 
+
+      # Configurar o GitHub CLI com o token de autenticação
+      - name: Configurar GitHub CLI
+        run: gh auth login --with-token <<< "${{ secrets.TOKEN_REPO }}"
+
+      - name: Executar o script de release
+        env:
+          TOKEN_REPO: ${{ secrets.TOKEN_REPO }}
+        run: ./scripts/release.sh      
+
+      - name: Criar commit com nova versão
+        env:
+          TOKEN_REPO: ${{ secrets.TOKEN_REPO }}
+        run: |
+          VERSION=$(git describe --tags --abbrev=0)
+          poetry version ${VERSION#v}
+          git add pyproject.toml
+          git commit -m "chore(release): Bump version to $(poetry version -s)"
+          git push origin HEAD
