@@ -28,3 +28,5 @@
 - fix: ssl required in config database (f3a6399)
 ## v1.4.4
 - fix: path to migrate command (28c9985)
+## v1.4.5
+- fix: path migrate command to full (638e14d)
