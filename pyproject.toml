@@ -1,6 +1,6 @@
 [project]
 name = "estagio-teste"
-version = "1.4.6"
+version = "1.4.7"
 description = ""
 authors = [
     {name = "T-Terra",email = "gabst138@gmail.com"}
