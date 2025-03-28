@@ -36,3 +36,5 @@
 - fix: dockerfile path to app (9aea377)
 ## v1.4.8
 - fix: CMD dockerfile (393747f)
+## v1.4.9
+- fix: command core.wsgi (0c77994)
