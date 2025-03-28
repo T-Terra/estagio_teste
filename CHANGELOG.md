@@ -23,3 +23,6 @@
 - chore: update env example (bc3f7be)
 ## v1.4.2
 - fix: deploy docker file (566c737)
+## v1.4.3
+- fix: path to execute migrate (a57e1cf)
+- fix: ssl required in config database (f3a6399)
