@@ -46,3 +46,5 @@
 - feat: add actions to dockerfile deploy aws ecr (5af3010)
 ## v1.5.1
 - fix: event name workflow (a188b81)
+## v1.5.2
+- fix: name to tag docker build (c4f895e)
