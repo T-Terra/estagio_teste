@@ -12,4 +12,4 @@ RUN poetry install --no-root
 
 RUN ls /app/
 
-CMD poetry run python /app/manage.py migrate && poetry run gunicorn --bind 0.0.0.0:8000 app.core.wsgi:application
+CMD poetry run python /app/manage.py migrate && poetry run gunicorn --bind 0.0.0.0:8000 core.wsgi:application
