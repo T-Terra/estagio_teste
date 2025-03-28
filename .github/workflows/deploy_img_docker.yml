@@ -26,11 +26,11 @@ jobs:
 
       - name: 🏗️ Build da imagem Docker
         run: |
-          docker build -t django-api .
+          docker build -t django-api-img .
 
       - name: 🏷️ Tag da imagem
         run: |
-          docker tag meu-django-api:latest \
+          docker tag django-api-img:latest \
           ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/django-api:latest
 
       - name: 🚀 Push da imagem para ECR
