@@ -3,6 +3,12 @@
 ## 📝 Sobre o Projeto
 Este projeto utiliza **Django** como backend, **Vue.js** como frontend e um sistema de **web scraping** com **Selenium** para baixar arquivos PDF. Além disso, há um módulo para **extração de tabelas** dos PDFs e uma **API de testes** usando Postman.
 
+---
+
+**Acesso ao frontend da aplicação:** [App](https://estagio-teste-five.vercel.app/)
+
+---
+
 ## 📂 Estrutura do Projeto
 ```
 ├── backend/              # 4. TESTE DE API
