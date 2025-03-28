@@ -18,3 +18,6 @@
 ## v1.4.0
 - feat: add Dockerfile to deploy (20b5de0)
 - chore: update doc (7fccd50)
+## v1.4.1
+- chore: add env secret key to backend (db4025b)
+- chore: update env example (bc3f7be)
