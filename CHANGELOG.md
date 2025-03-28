@@ -34,3 +34,5 @@
 - fix: command docker file (b034538)
 ## v1.4.7
 - fix: dockerfile path to app (9aea377)
+## v1.4.8
+- fix: CMD dockerfile (393747f)
