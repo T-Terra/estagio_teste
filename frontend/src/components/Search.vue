@@ -16,7 +16,7 @@ const fetchOperadoras = async () => {
 
     try {
       const response = await axios.get(
-        `${apiUrl}?razao_social__icontains=${searchQuery.value}`
+        `${apiUrl}/api/list/?razao_social__icontains=${searchQuery.value}`
       )
       operadoras.value = response.data
     } catch (error) {
