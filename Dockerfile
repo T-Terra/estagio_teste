@@ -8,7 +8,7 @@ COPY ./backend/ /app/
 
 RUN pip install poetry
 
-RUN poetry install --no-root --no-dev
+RUN poetry install --no-root
 
 RUN poetry run python manage.py migrate
 
