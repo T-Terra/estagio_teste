@@ -7,3 +7,5 @@
 - fix: clear changelog (bceef01)
 ## v1.0.2
 - fix: config settings backend allowed hosts (602837f)
+## v1.1.0
+- feat: finish tests api with postman (f61cdc6)
