@@ -48,6 +48,7 @@ Este projeto utiliza **Django** como backend, **Vue.js** como frontend e um sist
 - PostgreSQL
 - Gunicorn
 - Django Filters
+- Docker
 
 ### 🔹 Web Scraping e Extração de PDF
 - Selenium
