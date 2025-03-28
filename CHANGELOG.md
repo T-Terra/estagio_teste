@@ -38,3 +38,5 @@
 - fix: CMD dockerfile (393747f)
 ## v1.4.9
 - fix: command core.wsgi (0c77994)
+## v1.4.10
+- chore: update settings backend (cc6a1a6)
