@@ -10,6 +10,8 @@ RUN pip install poetry
 
 RUN poetry install --no-root
 
-RUN poetry run python /app/backend/manage.py migrate
+RUN ls /app/backend
+
+# RUN poetry run python /app/backend/manage.py migrate
 
 CMD ["poetry", "run", "gunicorn", "--bind", "0.0.0.0:8000", "backend.core.wsgi:application"]
