@@ -5,3 +5,5 @@
 ## v1.0.1
 - fix: version script (3b916a0)
 - fix: clear changelog (bceef01)
+## v1.0.2
+- fix: config settings backend allowed hosts (602837f)
