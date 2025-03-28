@@ -113,7 +113,7 @@ else:
         raise ValueError("DATABASE_URL não foi encontrada no ambiente!")
 
     DATABASES = {
-        "default": dj_database_url.parse(database_host)
+        "default": dj_database_url.parse(database_host, ssl_require=True)
     }
 
 
