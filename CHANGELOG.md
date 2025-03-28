@@ -15,3 +15,6 @@
 - feat: add example for .env front and back (eabc5f4)
 ## v1.3.1
 - chore: add address to frontend access (9332fd7)
+## v1.4.0
+- feat: add Dockerfile to deploy (20b5de0)
+- chore: update doc (7fccd50)
