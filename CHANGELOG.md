@@ -32,3 +32,5 @@
 - fix: path migrate command to full (638e14d)
 ## v1.4.6
 - fix: command docker file (b034538)
+## v1.4.7
+- fix: dockerfile path to app (9aea377)
