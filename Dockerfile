@@ -4,14 +4,14 @@ WORKDIR /app
 
 COPY pyproject.toml poetry.lock /app/
 
-COPY ./backend/ /app/
+COPY ./backend /app/
 
 RUN pip install poetry
 
 RUN poetry install --no-root
 
-RUN ls /app/backend
+RUN ls /app/
 
-# RUN poetry run python /app/backend/manage.py migrate
+RUN poetry run python /app/manage.py migrate
 
-CMD ["poetry", "run", "gunicorn", "--bind", "0.0.0.0:8000", "backend.core.wsgi:application"]
+CMD ["poetry", "run", "gunicorn", "--bind", "0.0.0.0:8000", "app.core.wsgi:application"]
