@@ -1,7 +1,7 @@
 name: Deploy Django API para AWS ECR
 
 on:
-  workflow_dispath:
+  workflow_dispatch:
 
 jobs:
   deploy:
