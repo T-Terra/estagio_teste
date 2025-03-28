@@ -9,3 +9,5 @@
 - fix: config settings backend allowed hosts (602837f)
 ## v1.1.0
 - feat: finish tests api with postman (f61cdc6)
+## v1.2.0
+- feat: add doc in project (9065f08)
