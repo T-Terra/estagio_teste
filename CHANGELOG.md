@@ -13,3 +13,5 @@
 - feat: add doc in project (9065f08)
 ## v1.3.0
 - feat: add example for .env front and back (eabc5f4)
+## v1.3.1
+- chore: add address to frontend access (9332fd7)
