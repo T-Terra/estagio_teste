@@ -21,3 +21,5 @@
 ## v1.4.1
 - chore: add env secret key to backend (db4025b)
 - chore: update env example (bc3f7be)
+## v1.4.2
+- fix: deploy docker file (566c737)
