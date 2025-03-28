@@ -42,3 +42,5 @@
 - chore: update settings backend (cc6a1a6)
 ## v1.4.11
 - chore: add full path api (3a56243)
+## v1.5.0
+- feat: add actions to dockerfile deploy aws ecr (5af3010)
