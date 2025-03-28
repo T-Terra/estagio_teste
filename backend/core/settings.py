@@ -30,7 +30,7 @@ SECRET_KEY = "django-insecure-_@*ng+h5c^+54$3tv_snizps6y&axj==53*^#x1tt8=q!lj-ap
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "True").lower() == "true"
 
-ALLOWED_HOSTS = ["estagio-teste-five.vercel.app", "localhost"]
+ALLOWED_HOSTS = ["estagio-teste-five.vercel.app", "localhost", "127.0.0.1"]
 
 APPEND_SLASH = False
 
