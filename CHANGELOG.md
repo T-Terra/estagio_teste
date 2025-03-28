@@ -11,3 +11,5 @@
 - feat: finish tests api with postman (f61cdc6)
 ## v1.2.0
 - feat: add doc in project (9065f08)
+## v1.3.0
+- feat: add example for .env front and back (eabc5f4)
