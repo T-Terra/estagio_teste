@@ -40,3 +40,5 @@
 - fix: command core.wsgi (0c77994)
 ## v1.4.10
 - chore: update settings backend (cc6a1a6)
+## v1.4.11
+- chore: add full path api (3a56243)
