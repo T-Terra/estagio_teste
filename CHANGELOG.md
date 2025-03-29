@@ -68,3 +68,5 @@
 - chore: add command gunicorn (bebb12e)
 ## v1.6.3
 - chore: add host ec2 (0b1c9df)
+## v1.6.4
+- chore: add elastc ip (67d2e02)
