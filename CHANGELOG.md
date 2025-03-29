@@ -85,3 +85,5 @@
 - chore: response backend return 404 (143782a)
 ## v1.6.11
 - fix: logic to show components list and error (fe48d96)
+## v1.6.12
+- fix: list error message (c1d8bcb)
