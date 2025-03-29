@@ -62,3 +62,5 @@
 - fix: config to venv (24839cf)
 ## v1.6.0
 - feat: add wsgi adapter (9329488)
+## v1.6.1
+- chore: add logging info in lambda func (1cfe22a)
