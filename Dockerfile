@@ -1,4 +1,4 @@
-FROM public.ecr.aws/lambda/python:3.12
+FROM python:3.12
 
 # Definir variáveis de build (essas variáveis podem ser passadas durante o build)
 ARG DB_HOST
@@ -15,12 +15,6 @@ WORKDIR /app
 COPY pyproject.toml poetry.lock /app/
 
 COPY ./backend /app/
-
-RUN yum update -y && yum install -y \
-    gcc \
-    libpq-dev \
-    postgresql-devel \
-    make
 
 RUN pip install poetry
 
