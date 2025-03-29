@@ -8,7 +8,7 @@ const props = defineProps({
 
 <template>
     <div v-if="props.searchQuery !== undefined">
-        <div v-if="props.operadoras.length" class="container-operadora">
+        <div v-if="props.statusResponse === 200 && props.operadoras.length" class="container-operadora">
             <table>
                 <thead>
                 <tr>
@@ -30,7 +30,7 @@ const props = defineProps({
                 </tbody>
             </table>
         </div>
-        <p v-else-if="props.statusResponse !== 200">Nenhuma operadora encontrada.</p>
+        <p v-else-if="props.statusResponse === 404 && props.operadoras.length === 0">Nenhuma operadora encontrada.</p>
     </div>
 </template>
 
