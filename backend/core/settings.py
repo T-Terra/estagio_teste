@@ -30,14 +30,8 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "True").lower() == "true"
 
-ALLOWED_HOSTS = ["estagio-teste-five.vercel.app", "api-estagio-test.onrender.com", "localhost", "127.0.0.1", "15.229.217.41"]
+ALLOWED_HOSTS = ["estagio-teste-five.vercel.app", "api-estagio-test.onrender.com", "localhost", "127.0.0.1", "api-estagio-production.up.railway.app"]
 
-
-SECURE_SSL_REDIRECT = False
-SECURE_HSTS_SECONDS = 0
-SECURE_CONTENT_TYPE_NOSNIFF = False
-CSRF_COOKIE_SECURE = False
-SESSION_COOKIE_SECURE = False
 
 APPEND_SLASH = False
 
@@ -45,14 +39,14 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "https://estagio-teste-five.vercel.app",
     "https://api-estagio-test.onrender.com",
-    "http://15.229.217.41:8000"
+    "https://api-estagio-production.up.railway.app"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
     "https://estagio-teste-five.vercel.app",
     "https://api-estagio-test.onrender.com",
-    "http://15.229.217.41:8000"
+    "https://api-estagio-production.up.railway.app"
 ]
 
 
