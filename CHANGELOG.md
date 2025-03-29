@@ -50,3 +50,5 @@
 - fix: name to tag docker build (c4f895e)
 ## v1.5.3
 - chore: add env in img docker (0747d3b)
+## v1.5.4
+- fix: add dependencies of pg (d1fcfea)
