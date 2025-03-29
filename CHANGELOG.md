@@ -72,3 +72,5 @@
 - chore: add elastc ip (67d2e02)
 ## v1.6.5
 - fix: add new set (cb4b8f3)
+## v1.6.6
+- chore: add app railway (0b676e1)
