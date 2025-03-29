@@ -1,4 +1,14 @@
-FROM python:3.12
+FROM public.ecr.aws/lambda/python:3.12
+
+# Definir variáveis de build (essas variáveis podem ser passadas durante o build)
+ARG DB_HOST
+ARG SECRET_KEY
+ARG DEBUG
+
+# Defina variáveis de ambiente
+ENV DB_HOST=${DB_HOST}
+ENV SECRET_KEY=${SECRET_KEY}
+ENV DEBUG=${DEBUG}
 
 WORKDIR /app
 

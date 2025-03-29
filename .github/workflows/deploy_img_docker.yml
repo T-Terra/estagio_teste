@@ -26,7 +26,11 @@ jobs:
 
       - name: 🏗️ Build da imagem Docker
         run: |
-          docker build -t django-api-img .
+          docker build \
+          --build-arg DB_HOST=${{ secrets.DB_HOST }} \
+          --build-arg SECRET_KEY=${{ secrets.SECRET_KEY }} \
+          --build-arg DEBUG=${{ secrets.DEBUG }} \
+          -t django-api-img .
 
       - name: 🏷️ Tag da imagem
         run: |
