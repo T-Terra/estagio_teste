@@ -16,6 +16,12 @@ COPY pyproject.toml poetry.lock /app/
 
 COPY ./backend /app/
 
+RUN yum update -y && yum install -y \
+    gcc \
+    libpq-dev \
+    postgresql-devel \
+    make
+
 RUN pip install poetry
 
 RUN poetry install --no-root
