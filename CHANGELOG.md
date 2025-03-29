@@ -56,3 +56,5 @@
 - fix: version python dockerfile (91c4c1f)
 ## v1.5.6
 - chore: add cache dir lambda (a768124)
+## v1.5.7
+- chore: new path cache (96c7f62)
