@@ -58,3 +58,5 @@
 - chore: add cache dir lambda (a768124)
 ## v1.5.7
 - chore: new path cache (96c7f62)
+## v1.5.8
+- fix: config to venv (24839cf)
