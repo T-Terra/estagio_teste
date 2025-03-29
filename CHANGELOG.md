@@ -54,3 +54,5 @@
 - fix: add dependencies of pg (d1fcfea)
 ## v1.5.5
 - fix: version python dockerfile (91c4c1f)
+## v1.5.6
+- chore: add cache dir lambda (a768124)
