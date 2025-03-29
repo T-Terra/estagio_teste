@@ -66,3 +66,5 @@
 - chore: add logging info in lambda func (1cfe22a)
 ## v1.6.2
 - chore: add command gunicorn (bebb12e)
+## v1.6.3
+- chore: add host ec2 (0b1c9df)
