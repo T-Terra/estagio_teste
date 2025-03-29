@@ -30,7 +30,7 @@ const props = defineProps({
                 </tbody>
             </table>
         </div>
-        <p v-else-if="props.statusResponse === 404 && props.operadoras.length === 0">Nenhuma operadora encontrada.</p>
+        <p v-else-if="props.statusResponse === 404">Nenhuma operadora encontrada.</p>
     </div>
 </template>
 
