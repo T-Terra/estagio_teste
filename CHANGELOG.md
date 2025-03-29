@@ -76,3 +76,5 @@
 - chore: add app railway (0b676e1)
 ## v1.6.7
 - fix: input search (2ee922e)
+## v1.6.8
+- fix: add conditional (f251010)
