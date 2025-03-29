@@ -52,3 +52,5 @@
 - chore: add env in img docker (0747d3b)
 ## v1.5.4
 - fix: add dependencies of pg (d1fcfea)
+## v1.5.5
+- fix: version python dockerfile (91c4c1f)
