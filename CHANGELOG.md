@@ -74,3 +74,5 @@
 - fix: add new set (cb4b8f3)
 ## v1.6.6
 - chore: add app railway (0b676e1)
+## v1.6.7
+- fix: input search (2ee922e)
