@@ -80,3 +80,6 @@
 - fix: add conditional (f251010)
 ## v1.6.9
 - chore: add button to search (c8b3116)
+## v1.6.10
+- fix: get response error in frontend (819b967)
+- chore: response backend return 404 (143782a)
