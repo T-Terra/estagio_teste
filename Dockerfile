@@ -18,6 +18,8 @@ COPY ./backend /app/
 
 RUN pip install poetry
 
+RUN poetry config cache-dir /tmp/.cache
+
 RUN poetry install --no-root
 
 RUN ls /app/
