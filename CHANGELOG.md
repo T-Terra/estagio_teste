@@ -60,3 +60,5 @@
 - chore: new path cache (96c7f62)
 ## v1.5.8
 - fix: config to venv (24839cf)
+## v1.6.0
+- feat: add wsgi adapter (9329488)
