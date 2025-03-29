@@ -70,3 +70,5 @@
 - chore: add host ec2 (0b1c9df)
 ## v1.6.4
 - chore: add elastc ip (67d2e02)
+## v1.6.5
+- fix: add new set (cb4b8f3)
