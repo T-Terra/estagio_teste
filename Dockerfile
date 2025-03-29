@@ -10,6 +10,12 @@ ENV DB_HOST=${DB_HOST}
 ENV SECRET_KEY=${SECRET_KEY}
 ENV DEBUG=${DEBUG}
 
+# Set the poetry cache directory to /tmp
+ENV POETRY_CACHE_DIR=/tmp/.cache/pypoetry
+
+# Set the virtualenv location to /tmp/.cache
+ENV VIRTUALENV_PATH=/tmp/.cache/pypoetry/virtualenvs
+
 WORKDIR /app
 
 COPY pyproject.toml poetry.lock /app/
@@ -18,7 +24,7 @@ COPY ./backend /app/
 
 RUN pip install poetry
 
-RUN poetry config cache-dir /tmp/.cache
+RUN poetry config cache-dir /tmp/.cache/pypoetry
 
 RUN poetry install --no-root
 
