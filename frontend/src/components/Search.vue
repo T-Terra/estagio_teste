@@ -1,15 +1,16 @@
 <script setup>
 import List from "./List.vue";
-import { ref, watch } from "vue"
+import { ref } from "vue"
 import axios from "axios";
     
 const searchQuery = ref("")
 const operadoras = ref([])
+const statusResponse = ref(200)
 
 const apiUrl = import.meta.env.VITE_URL_API
 
 const fetchOperadoras = async () => {
-  if (searchQuery.value.length < 2) {
+  if (searchQuery.value === "") {
     operadoras.value = []
     return
   } else {
@@ -18,15 +19,12 @@ const fetchOperadoras = async () => {
         `${apiUrl}/api/list/?razao_social__icontains=${searchQuery.value}`
       )
       operadoras.value = response.data
+      statusResponse.value = response.status
     } catch (error) {
       console.error("Erro ao buscar operadoras:", error)
     }
   }
 }
-
-watch(searchQuery, () => {
-  fetchOperadoras()
-})
 </script>
 
 <template>
@@ -34,10 +32,10 @@ watch(searchQuery, () => {
       <input
         class="input"
         v-model="searchQuery"
-        @input="fetchOperadoras"
         placeholder="Digite para buscar..."
       />
-      <List :operadoras="operadoras" :searchQuery="searchQuery"/>
+      <button class="btn" @click="fetchOperadoras">Buscar</button>
+      <List :operadoras="operadoras" :searchQuery="searchQuery" :statusResponse="statusResponse"/>
     </div>
 </template>
 
