@@ -48,3 +48,5 @@
 - fix: event name workflow (a188b81)
 ## v1.5.2
 - fix: name to tag docker build (c4f895e)
+## v1.5.3
+- chore: add env in img docker (0747d3b)
