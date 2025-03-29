@@ -83,3 +83,5 @@
 ## v1.6.10
 - fix: get response error in frontend (819b967)
 - chore: response backend return 404 (143782a)
+## v1.6.11
+- fix: logic to show components list and error (fe48d96)
