@@ -64,3 +64,5 @@
 - feat: add wsgi adapter (9329488)
 ## v1.6.1
 - chore: add logging info in lambda func (1cfe22a)
+## v1.6.2
+- chore: add command gunicorn (bebb12e)
