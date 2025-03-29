@@ -21,6 +21,7 @@ const fetchOperadoras = async () => {
       operadoras.value = response.data
       statusResponse.value = response.status
     } catch (error) {
+      statusResponse.value = error.status
       console.error("Erro ao buscar operadoras:", error)
     }
   }
