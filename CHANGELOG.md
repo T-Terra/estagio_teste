@@ -78,3 +78,5 @@
 - fix: input search (2ee922e)
 ## v1.6.8
 - fix: add conditional (f251010)
+## v1.6.9
+- chore: add button to search (c8b3116)
