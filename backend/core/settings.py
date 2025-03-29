@@ -32,6 +32,13 @@ DEBUG = os.getenv("DEBUG", "True").lower() == "true"
 
 ALLOWED_HOSTS = ["estagio-teste-five.vercel.app", "api-estagio-test.onrender.com", "localhost", "127.0.0.1", "15.229.217.41"]
 
+
+SECURE_SSL_REDIRECT = False
+SECURE_HSTS_SECONDS = 0
+SECURE_CONTENT_TYPE_NOSNIFF = False
+CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = False
+
 APPEND_SLASH = False
 
 CORS_ALLOWED_ORIGINS = [
