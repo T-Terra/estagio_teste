@@ -26,6 +26,9 @@ RUN pip install poetry
 
 RUN poetry config cache-dir /tmp/.cache/pypoetry
 
+# Configurar o Poetry para usar o diretório de virtualenv
+RUN poetry config virtualenvs.in-project true
+
 RUN poetry install --no-root
 
 RUN ls /app/
