@@ -9,11 +9,10 @@ const operadoras = ref([])
 const apiUrl = import.meta.env.VITE_URL_API
 
 const fetchOperadoras = async () => {
-    if (searchQuery.value.length === 0) {
-      operadoras.value = []
-      return
-    }
-
+  if (searchQuery.value.length < 2) {
+    operadoras.value = []
+    return
+  } else {
     try {
       const response = await axios.get(
         `${apiUrl}/api/list/?razao_social__icontains=${searchQuery.value}`
@@ -22,6 +21,7 @@ const fetchOperadoras = async () => {
     } catch (error) {
       console.error("Erro ao buscar operadoras:", error)
     }
+  }
 }
 
 watch(searchQuery, () => {
