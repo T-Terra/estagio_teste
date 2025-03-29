@@ -9,7 +9,7 @@ const operadoras = ref([])
 const apiUrl = import.meta.env.VITE_URL_API
 
 const fetchOperadoras = async () => {
-    if (searchQuery.value.length < 2) {
+    if (searchQuery.value.length === 0) {
       operadoras.value = []
       return
     }
